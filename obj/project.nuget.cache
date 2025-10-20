@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uP10d4r5NCI=",
+  "success": true,
+  "projectFilePath": "/home/tawsif/Documents/dotnet_projects/projects/ecommerce/ecommerce.csproj",
+  "expectedPackageFiles": [
+    "/home/tawsif/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
