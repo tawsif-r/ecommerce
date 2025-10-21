@@ -10,8 +10,6 @@ services:
       - ConnectionStrings__DefaultConnection=Host=db;Database=ecommercedb;Username=tawsif;Password=postgres123
     depends_on:
       - db
-    volumes:
-      - ./:/app
     networks:
       - ecommerce-network
 
@@ -24,12 +22,10 @@ services:
     ports:
       - "54357:5432"
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - ./db-data:/var/lib/postgresql/data
     networks:
       - ecommerce-network
-
-volumes:
-  postgres-data:
+  
 
 networks:
   ecommerce-network:

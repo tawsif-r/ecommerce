@@ -1,0 +1,44 @@
+# .gitignore for ASP.NET Core + Docker + PostgreSQL project
+
+# --- .NET build and runtime ---
+bin/
+obj/
+appsettings.Development.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# --- VS / Rider / IDE ---
+.vs/
+.vscode/
+*.csproj.user
+*.resharper
+*.sln.ide/
+
+# --- Docker ---
+Dockerfile.*  # e.g., Dockerfile.dev, Dockerfile.linux
+.dockerignore
+
+# --- Logs and diagnostics ---
+*.log
+logs/
+*.diag
+
+# --- User secrets (never commit!) ---
+secrets.json
+appsettings.*.json  # Keep only appsettings.json in repo; exclude environment-specific ones
+
+# --- PostgreSQL (if you ever add init scripts) ---
+# db-init/
+# *.sql
+
+# --- Local DB data (you're using ./db-data now) ---
+/db-data/
+
+# --- macOS ---
+.DS_Store
+
+# --- Linux / Windows ---
+Thumbs.db
+ehthumbs.db
