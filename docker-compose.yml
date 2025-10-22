@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "5000:8080"
+      - "5100:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Host=db;Database=ecommercedb;Username=tawsif;Password=postgres123
@@ -24,7 +24,7 @@ services:
       - POSTGRES_PASSWORD=postgres123
       - POSTGRES_DB=ecommercedb
     ports:
-      - "54357:5432"
+      - "5437:5432"
     volumes:
       - ./db-data:/var/lib/postgresql/data
     networks:
