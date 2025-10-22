@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - "5000:8080"
     environment:
@@ -10,6 +10,10 @@ services:
       - ConnectionStrings__DefaultConnection=Host=db;Database=ecommercedb;Username=tawsif;Password=postgres123
     depends_on:
       - db
+    volumes:
+      - .:/app
+      - /app/obj
+      - /app/bin
     networks:
       - ecommerce-network
 

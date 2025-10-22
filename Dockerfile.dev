@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /app
+
+
+# Copy project file and restore dependencies (for Docker layer caching)
+COPY *.csproj ./
+RUN dotnet restore
+
+
+#Copy everything else
+COPY . .
+
+# Run with dotnet watch for live reloading
+ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_ENVIRONMENT=Development
+
+ENTRYPOINT ["dotnet","watch","run","--no-hot-reload","--urls","http://+:8080"]
