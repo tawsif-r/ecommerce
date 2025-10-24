@@ -1,7 +1,7 @@
 ## TODO
-1. Make api endpoints
-2. Learn the structures for different templates
-3. Make razors
+- [X] Make api endpoints
+- [ ] Learn the structures for different templates
+- [ ] Make razors
 ## Ecommerce
 An all purpose web app that will serve as a generic shoping app.
 

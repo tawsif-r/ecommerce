@@ -1,0 +1,18 @@
+###
+@TestApi_HostAddress = http://localhost:5100
+
+GET {{TestApi_HostAddress}}/api/Users
+Accept: application/json
+
+###
+POST {{TestApi_HostAddress}}/api/Users
+Accept: application/json
+Content-Type: application/json
+
+{
+
+    "Name": "Macavi",
+    "Email": "macavi@gmail.com",
+    "Password":"macavi123"
+
+}
