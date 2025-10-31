@@ -1,7 +1,37 @@
-﻿@{
+﻿
+@model IEnumerable<ecommerce.Models.User>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1> The admin dashboard will go here</h1>
+    <h1> Admin Dasboard</h1>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center text-muted">No Users found.</td>
+            </tr>
+        }
+    </tbody>
+    </table>
 </div>
