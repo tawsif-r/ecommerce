@@ -1,21 +1,28 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ecommerce.Models;
+using ecommerce.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly ApplicationDbContext dbContext;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ApplicationDbContext dbContext,ILogger<HomeController> logger)
     {
+        this.dbContext = dbContext;
         _logger = logger;
     }
 
     public IActionResult Index()
     {
-        return View();
+        // the admin dashboard will go here
+        // make objects.get.all for this
+        var users = dbContext.Users.ToList();
+        return View(users);
     }
 
     public IActionResult Privacy()
